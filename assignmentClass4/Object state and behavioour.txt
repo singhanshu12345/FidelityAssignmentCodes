@@ -1,0 +1,16 @@
+Object: Bike
+State: Current speed, current gear
+Behaviour: Change Gear, Accelerator, Break
+
+Object: Dog
+State: Name, color, Breed
+Behaviour: Bark, Eat
+
+Object: Bank Account
+State: Account Number, Account type(Saving or investment)
+Behaviour: Withdraw money, Deposit money, Transfer money
+
+Object: Tree
+State: Leaf, color, type of tree
+Behaviour: Gives oxygen, Food
+
