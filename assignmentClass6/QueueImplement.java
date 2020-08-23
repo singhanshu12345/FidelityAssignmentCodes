@@ -35,7 +35,8 @@ public class QueueImplement implements queue {
 			System.out.println("2. Delete from the queue: ");
 			System.out.println("3. Display the queue: ");
 			System.out.println("\n Enter the choice: ");
-			int choice=in.nextInt();
+
+int choice=in.nextInt();
 			switch(choice) {
 			case 1:
 				try {
@@ -66,7 +67,8 @@ public class QueueImplement implements queue {
 				System.out.println("Wrong Choice");
 				break;
 			}
-			System.out.println("Do u want to continue");
+
+System.out.println("Do u want to continue");
 			ch=in.next().charAt(0);
 		}
 		
@@ -74,6 +76,9 @@ public class QueueImplement implements queue {
 		
 	}
 	public void insert(int num) {
+		if(front==-1 && rear==-1) {
+			front=0;
+		}
 		if(rear+1>=size) {
 			throw new IndexOutOfBoundsException("Overflow");			
 		}
@@ -82,7 +87,25 @@ public class QueueImplement implements queue {
 		}
 	}
 	public void delete() {
-		System.out.println("This is inside delete method");
+		if(front==-1&&rear==-1) {
+			System.out.println("This is empty queue");
+			
+		}
+			
+		/*else if(front==0&&rear==0) {
+			System.out.println("Element got deleted and queue is empty");
+			front=rear=-1;
+		}*/	
+		else {
+			int i=0;
+			while(i<rear-1) {
+				queue[i]=queue[++i];
+			}
+			if(rear<size)
+				queue[rear]=0;
+			//front++;
+			rear--;
+		}
 	}
 	public void display() {
 		for(int i=1;i<=queue.length;i++) {
